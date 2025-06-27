@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
-const Navigation = () => {
+const Navigation = ({interestedFormStatus, setInterestedFormStatus}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -50,12 +50,13 @@ const Navigation = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <a
-              href="#pricing"
+            <button
+              
               className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2.5 rounded-full font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
+              onClick={()=>setInterestedFormStatus(true)}
             >
               Start Free Trial
-            </a>
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -83,13 +84,12 @@ const Navigation = () => {
                   {item.name}
                 </a>
               ))}
-              <a
-                href="#pricing"
+              <button
                 className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-2 rounded-full font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-200 block text-center mt-4"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => setInterestedFormStatus(true)}
               >
                 Start Free Trial
-              </a>
+              </button>
             </div>
           </div>
         )}

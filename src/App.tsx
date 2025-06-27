@@ -6,20 +6,24 @@ import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import Contact from './components/Contact';
 import InterestedForm from "./components/InterestedForm";
+import BookSlotForm from './components/BookSlotForm';
 
 function App() {
   let [interestedFormStatus, setInterestedFormStatus] = useState(false);
   let [bookSlotFormStatus, setBookSlotFormStatus ] = useState(false);
 
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation interestedFormStatus={interestedFormStatus} setInterestedFormStatus ={ setInterestedFormStatus} />
       {interestedFormStatus && <InterestedForm interestedFormStatus={interestedFormStatus } setInterestedFormStatus ={ setInterestedFormStatus} />}
+     
       <Hero />
       <Features />
       <Testimonials />
       <Pricing />
-      <Contact />
+      <Contact bookSlotFormStatus={bookSlotFormStatus} setBookSlotFormStatus={setBookSlotFormStatus}/>
+       {bookSlotFormStatus && <BookSlotForm bookSlotFormStatus={bookSlotFormStatus } setBookSlotFormStatus ={ setBookSlotFormStatus} />}
     </div>
   );
 }

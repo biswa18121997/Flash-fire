@@ -1,7 +1,6 @@
-import React from 'react';
 import { Mail, Calendar, MessageCircle, Zap } from 'lucide-react';
 
-const Contact = () => {
+const Contact = ({bookSlotFormStatus, setBookSlotFormStatus}) => {
   return (
     <section id="contact" className="py-24 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,7 +40,7 @@ const Contact = () => {
                   <div className="p-3 bg-orange-100 rounded-xl">
                     <Calendar className="w-6 h-6 text-orange-600" />
                   </div>
-                  <div>
+                  <div onClick={() => setBookSlotFormStatus(true)} className="cursor-pointer">
                     <p className="text-gray-900 font-semibold">Book a Demo</p>
                     <p className="text-gray-600">Schedule a free consultation</p>
                   </div>

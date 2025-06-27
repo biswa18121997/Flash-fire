@@ -89,7 +89,7 @@ function InterestedForm({ interestedFormStatus, setInterestedFormStatus }: Inter
   useEffect(AOS_Initializer, []);
 
   return (
-    <div data-aos='fade-top' className="fixed left-[15%] h-[75vh] top-[10vh] inset-0 z-50 bg-neutral-400/90 flex shadow-xl w-2/3 justify-center m-1/2">
+    <div data-aos='fade-top' className="fixed left-[20%] h-[75vh] top-[10vh] inset-0 z-50 bg-neutral-400/90 flex shadow-xl w-[100vw] md:w-[60vw] justify-center m-1/2 rounded-2xl ">
       {/* Left Section */}
       {/* <div className="w-1/2 bg-[#0f0d0e]/50 text-white flex flex-col justify-center items-center relative overflow-hidden p-10 bg-bottom bg-opacity-50 ">
         <div className="absolute top-6 right-6">
@@ -111,15 +111,16 @@ function InterestedForm({ interestedFormStatus, setInterestedFormStatus }: Inter
       </div> */}
 
       {/* Right Section (Form) */}
-      <div data-aos='flip-up' className="w-1/2 flex flex-col justify-center items-center px-16 relative">
-      <X onClick={() => setInterestedFormStatus(false)} className="text-white hover:bg-red-600 duration-500 cursor-pointer static left-0 top-0 hover:border rounded-full p-2 mb-5" size={48} />
 
-      <section className='flex w-full justify-between'>
-        <h1 className="text-2xl font-semibold mb-1 text-neutral-900">Start Free Trial, our Team will Connect with You.</h1>
+      <div data-aos='flip-up' className="w-1/2 flex flex-col justify-center items-center px-10 relative p-4 border">
+
+      <section className='flex w-full justify-around bg-red-700'>
+        <img src='/Logo.jpeg' alt='LOGO' className='w-1/4 h-full' />
+        <h1 className="text-2xl font-semibold mb-1 w-3/4 text-white text-wrap">Start Free Trial, our Team will Connect with You.</h1>
       </section>
         
       
-        <p className="text-sm text-gray-600 mb-8">Enter your details below</p>
+        <p className="text-sm text-black font-semibold mb-8 mt-3">Enter your details below</p>
 
         <div data-aos='fade-right' className="w-full flex flex-col gap-4">
           <input
@@ -161,6 +162,8 @@ function InterestedForm({ interestedFormStatus, setInterestedFormStatus }: Inter
           <p className="mt-4 text-green-600">{responseFromServer.message}</p>
         )}
       </div>
+                  <X onClick={() => setInterestedFormStatus(false)} className="text-white hover:bg-red-600 duration-300 cursor-pointer static left-0 top-0 hover:border rounded-full p-2 mb-5" size={48} />
+
     </div>
   );
 }

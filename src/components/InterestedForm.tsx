@@ -91,7 +91,7 @@ function InterestedForm({ interestedFormStatus, setInterestedFormStatus }: Inter
   return (
     <div data-aos='fade-top' className="fixed left-[15%] h-[75vh] top-[10vh] inset-0 z-50 bg-neutral-400/90 flex shadow-xl w-2/3 justify-center m-1/2">
       {/* Left Section */}
-      <div className="w-1/2 bg-[#0f0d0e]/50 text-white flex flex-col justify-center items-center relative overflow-hidden p-10 bg-bottom bg-opacity-50 ">
+      {/* <div className="w-1/2 bg-[#0f0d0e]/50 text-white flex flex-col justify-center items-center relative overflow-hidden p-10 bg-bottom bg-opacity-50 ">
         <div className="absolute top-6 right-6">
           <X onClick={() => setInterestedFormStatus(false)} className="text-white hover:text-red-500 cursor-pointer" size={28} />
         </div>
@@ -108,11 +108,16 @@ function InterestedForm({ interestedFormStatus, setInterestedFormStatus }: Inter
 
         <div className="absolute w-[200px] h-[200px] bg-orange-500 rounded-full right-[-50px] top-[50px]"></div>
         <div className="absolute w-[12px] h-[12px] bg-white rounded-full top-[30px] left-[45px]"></div>
-      </div>
+      </div> */}
 
       {/* Right Section (Form) */}
-      <div className="w-1/2 flex flex-col justify-center items-center px-16 relative">
+      <div data-aos='flip-up' className="w-1/2 flex flex-col justify-center items-center px-16 relative">
+      <X onClick={() => setInterestedFormStatus(false)} className="text-white hover:bg-red-600 duration-500 cursor-pointer static left-0 top-0 hover:border rounded-full p-2 mb-5" size={48} />
+
+      <section className='flex w-full justify-between'>
         <h1 className="text-2xl font-semibold mb-1 text-neutral-900">Start Free Trial, our Team will Connect with You.</h1>
+      </section>
+        
       
         <p className="text-sm text-gray-600 mb-8">Enter your details below</p>
 
